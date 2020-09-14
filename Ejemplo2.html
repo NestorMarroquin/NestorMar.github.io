@@ -1,0 +1,130 @@
+<!--Pagina Web que muestra el uso de mas etiquetas
+-->
+<!DOCTYPE html>
+<html lang = "es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Ejemplo de etiquetas</title>
+</head>
+<body>
+	<p>Una de las caracteristicas de HTML es la posibilidad de enlazar paginas utilizando el elemento < a ></p>
+	<a href="http://www.cursohtml5desdecero.com">Curso de Html5 desde cero</a>
+	<p>Tenemos tres tipos de enlace:</p>
+	<ol>
+		<li><strong>Absoluto:</strong>
+		Que incluye todas las partes de un enlace 
+		<br>
+		sheme:[//[user:password@]host[:port][/]path[?query][#fragment]]
+		</li>
+		<li><strong>Relativo: </strong>
+			Hace referencia a un recurso en una posicion relativa <br>
+			<a href="https://w7.pngwing.com/pngs/829/771/png-transparent-ubuntu-logo-linux-operating-systems-linux-text-orange-logo.png">Enlace a una imagen</a>				
+		</li>
+		<li><strong>Ancla o anchor</strong>
+			A diferencia de los anteriores este se utiliza para indicar un elemento dentro de la misma pagina por medio de id <br>
+			< a href = "#leccion1" >Leccion 3 < /a > <br>
+			< h2 id="leccion1" > Leccion 3 < /a>
+		</li>
+	</ol>
+	<h2>Imagenes</h2>
+	<p>Hay dos maneras de mostrar una imagen: usando elemento img y CSS<br>
+		Esta etiqueta requiere de dos atributos: <strong>src</strong>(source)<br>
+		junto a <strong>alt</strong>(alternative)<br> 
+		Por ejemplo</p>
+	<img src="http://www.cursohtml5desdecero.com/assets/images/html-css-js.png" alt="Logo de HTML5">
+
+	<h2>Tablas</h2>
+	<p>Para crear una tabla indicamos las filas y las columnas usando los elemnentos <br>
+		<strong>tr</strong>(table row)<br>
+		<strong>td</strong>(table data)<br>
+		<strong>colspan</strong>(columnn span = numero celdas a abarcar)<br>
+		<strong>rowspan</strong>(row span = numero de celdas a abarcar)<br>
+		Por ejemplo:</p>
+
+		<table>
+			<tr>
+				<td>Fila 1, Columna 1</td>
+				<td colspan="3">Fila 1, columnas 2, 3 y 4</td>
+			</tr>
+			<tr>
+				<td rowspan="2">Fila 2, Columna 1 + Fila 3, Columna 1</td>
+				<td>Fila 2, Columna 2</td>
+				<td>Fila 2, Columna 3</td>
+				<td>Fila 2, Columna 4</td>
+			</tr>
+			<tr>
+				<td>Fila 3, Columna 2</td>
+				<td>Fila 3, Columna 3</td>
+				<td>Fila 3, Columna 4</td>
+			</tr>
+
+		</table>
+
+		<h2>Formularios</h2>
+		<ul>
+			<li><strong>form:</strong> Sera el elemento padre que anide los campos del formulario</li>
+			<li><strong>--> action:</strong> Indica la URL que se enviara a la peticion HTTP </li>
+			<li><strong>--> method:</strong> Indica si la peticion HTTP sea GET o POST</li>
+			
+			<li><strong>input:</strong> Permite  introducir diferentes ttipos de campo de formulario en base al valor del atributo type. En funcion del valor indicado del type diispondremos de unos u ptros atributos</li>
+			<li><strong>--> type:</strong>(obligatorio) Puede tener text, email, checkbox, color, dat, file, hidden, etc. En funcion del tipo que queramos</li>
+			<li><strong>--> id:</strong> Obligatorio si el elemento label tiene un atributo for</li>
+			<li><strong>--> name:</strong> Opcional Representa el nombre asignado al campo cuando se envie la peticion HTTP</li>
+			<li><strong>--> value:</strong> Opcional Representa el valor que se asignara al campo cuando se envie la peticion HTTP</li>
+			
+			<li><strong>select:</strong> Nos permite crear una lista desplegable de opciones</li>
+			<li><strong>--> id:</strong> Igual que el elemento <strong>input</strong></li>
+			<li><strong>--> name:</strong> Igual que el campo <strong>input</strong></li>
+
+			<li><strong>option:</strong> Nos sirve para encapsular cada opcion de la lista</li>
+			<li><strong>-->value:</strong> Igual que el atributo <strong>value</strong> del campo <strong>input</strong></li>
+
+			<li><strong>textarea:</strong>representa un campo que nos permite introducir textos con saltos de linea incluidos, normalmente se usa cuando hay que introducir: descripciones, biografias, etc.</li>
+			<li><strong>--> id:</strong> Igual que el elemento <strong>input</strong> y <strong>select</strong></li>
+			<li><strong>--> name</strong> Igual que el elemento <strong>input</strong> y <strong>select</strong></li>
+
+			<li><strong>label:</strong>Se usa para especificar la etiqueta (o nombre) del campo (input, select o textarea) al que hace referencia la etiqueta.</li>
+			<li><strong>--> for:</strong> Debe tener el mismo valor que el atributo <strong>id</strong> del campo(input, select o textarea) a que hace referencia la etiqueta</li>
+
+			<li><strong>button:</strong> Representa un boton y el texto del boton esta representado por su contenido.</li>
+			<li><strong>--> type:</strong> Define el comportamiento del boton cuando esta activadi y ouede contener tres valores: <em>submit, reset, button</em></li>
+		</ul>
+		<h2>Ejemplo de formulario</h2>
+		<form action="miScript.php" method="GET">
+			<label for="to">Para:</label>
+			<input id="to" type="email">
+		<hr>
+			<label for="topic">Tematica:</label>
+			<select id="topic" name="topic">
+				<option>-- Elige un tema --</option>
+				<option value="proposal">Propuesta</option>
+				<option  value="report">Reporte</option>
+				<option value="other">Otro</option>
+			</select>
+		<hr>
+			<label for="subjet">Asunto: </label>
+			<input id="subjet" type="text" name="subjet">
+		<hr>
+			<label for="body">Cuerpo:</label>
+			<textarea id="body" name="body"></textarea>
+		<hr>
+			<button type="submit">Enviar</button>
+		</form>
+		<h2>O tambien podemos usar</h2>
+		<ul>
+			<li><strong>required:</strong> A un elemento para que el navegador se encarge de validar que este campo este relleno</li>
+			<li><strong>readonly:</strong> Si queremos que solo sea de lectura</li>
+			<li><strong>placeholder: </strong> Sin queremos que aparezca un texto de ayuda para rellenar el campo</li>
+			<li><strong>value:</strong> Para introducir un valor por defecto en el campo</li>
+		</ul>
+		<h2>Ejemplo</h2>
+
+		<label for="to">Para</label>
+		<input id="to" type="email" placeholder="tu@correo.com" required>
+	<hr>
+		<label for="subject">Asunto: </label>
+		<input id="subject" type="text" value="Formulario de Contacto" readonly>
+
+</body>
+</html>
